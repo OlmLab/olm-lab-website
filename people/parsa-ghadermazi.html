@@ -33,6 +33,7 @@ ol li::marker{color:#646464;font-variant-numeric:tabular-nums}
 .skip-link{position:absolute;left:16px;top:-200px;z-index:20;padding:12px 18px;border-radius:6px;background:#FFFFFF;color:#000000;font-weight:600}
 .skip-link:focus{top:10px}
 main:focus{outline:none}
+a{text-decoration-skip-ink:none}
 .cu-bar a,.cu-bar a:hover{color:#000000}
 .cu-home{display:block;width:100%;max-width:200px;min-width:160px;padding:16px 0}
 @media (min-width:768px){.cu-home{max-width:240px}}
@@ -45,8 +46,8 @@ main:focus{outline:none}
 .foot-btn{grid-column:2}
 @media (max-width:440px){.foot-id{grid-template-columns:minmax(0,1fr);row-gap:20px}.foot-btn{grid-column:1}}
 .person{display:flex;flex-direction:column;gap:12px;color:#000000;text-decoration-line:none}
-.person:hover{color:#000000}
-.person:hover .person-name{text-decoration-line:underline;text-decoration-color:#B07A12;text-decoration-thickness:2px;text-underline-offset:4px}
+a.person:hover{color:#000000}
+a.person:hover .person-name{text-decoration-line:underline;text-decoration-color:#B07A12;text-decoration-thickness:2px;text-underline-offset:4px}
 </style>
 <script src="../assets/js/dc-lite.js" defer></script>
 <script src="../assets/js/pages/person.js" defer></script>
