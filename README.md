@@ -15,10 +15,10 @@ Everything else is in `assets/`:
 
 - `assets/img/` holds the images in six folders: `banners/` for the seasonal page banners, `photos/`
   for the Home slideshow, `people/` for portraits, `funders/`, `logo/`, and `brand/` for the CU logos.
-- `assets/css/site.css` loads the Figtree font and has a few shared rules. Each page keeps its own
+- `assets/css/site.css` loads the fonts (Figtree for the site, Roboto for the site name in the header) and has a few shared rules. Each page keeps its own
   styles in a `<style>` block in its `<head>`.
-- `assets/fonts/` has the Figtree font files, which the site serves itself instead of loading them
-  from Google Fonts. Figtree is under the SIL Open Font License (see `OFL.txt`).
+- `assets/fonts/` has the Figtree and Roboto font files, which the site serves itself instead of loading
+  them from Google Fonts. Both are under the SIL Open Font License (see `OFL.txt` and `OFL-Roboto.txt`).
 - `assets/js/dc-lite.js` runs the logo animation, the pause buttons, the Home slideshow and the
   seasonal banners.
 - `assets/js/pages/` has the script for each page that `dc-lite.js` runs. The six person pages share

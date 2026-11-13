@@ -59,6 +59,16 @@ class Component extends DCLogic {
     if (key === st.shown) return;
     this.setState({ shown: key });
   }
+  cycleM() {
+    // hovering or tapping the logo steps the m through its shapes (a tap also sends mouseenter,
+    // so a second call within 400 ms is ignored and each tap moves one step)
+    const now = Date.now();
+    if (this._lastCycle && now - this._lastCycle < 400) return;
+    this._lastCycle = now;
+    const order = ['villi', 'helix', 'tree', 'volcano', 'pileup', 'bars', 'matrix', 'flatirons'];
+    const i = order.indexOf((this.state || {}).shown);
+    this.go(order[(i + 1) % order.length]);
+  }
   componentDidMount() {
     this._slides = setInterval(() => this.tickSlide(), 6000);
     this._onStorage = (e) => { if (e && e.key === 'olmlab-motion') this.setState({ motion: this.motionPref() }); };
@@ -99,7 +109,8 @@ class Component extends DCLogic {
       showVilli: go('villi'),
       showHelix: go('helix'),
       showMatrix: go('matrix'),
-      reset: () => this.go(this.base())
+      reset: () => this.go(this.base()),
+      cycleM: () => this.cycleM()
     };
     // the m that is showing is sharp and full size; the others wait slightly shrunk and blurred,
     // so swapping between them reads as one shape melting into the next
